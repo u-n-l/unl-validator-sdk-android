@@ -1,11 +1,12 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
-   // id 'org.jetbrains.dokka'
 
+   // id 'org.jetbrains.dokka'
 }
 
 android {
@@ -82,3 +83,16 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
 }
 apply plugin: 'com.google.gms.google-services'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.u-n-l'
+                artifactId = 'unl-validator-sdk-android'
+                version = '1.6.0'
+            }
+        }
+    }
+}
