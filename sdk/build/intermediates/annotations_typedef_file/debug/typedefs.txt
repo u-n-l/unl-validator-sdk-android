@@ -1,2 +1,0 @@
-D com/unl/addressvalidator/customview/textfield/IndicatorViewController$CaptionDisplayState
-D com/unl/addressvalidator/customview/textfield/IndicatorViewController$IndicatorIndex
